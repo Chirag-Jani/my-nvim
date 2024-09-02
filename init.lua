@@ -10,10 +10,12 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 
+vim.keymap.set('n', 'lb', 'o<Esc>k', { noremap = true, silent = true })
+vim.keymap.set('n', 'lu', 'O<Esc>j', { noremap = true, silent = true })
 vim.opt.rtp:prepend(lazypath)
 vim.cmd(":set number")
+vim.opt.guifont='CodeNewRoman'
+vim.wo.relativenumber = true
 require("vim-options")
 require("lazy").setup("plugins")
-
-
 
