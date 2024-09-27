@@ -10,8 +10,14 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 
-vim.keymap.set('n', 'lb', 'o<Esc>k', { noremap = true, silent = true })
-vim.keymap.set('n', 'lu', 'O<Esc>j', { noremap = true, silent = true })
+vim.keymap.set('n', 'LB', 'o<Esc>k', { noremap = true, silent = true })
+vim.keymap.set('n', 'LU', 'O<Esc>j', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-f>', '<C-f>-zz', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-b>', '<C-b>-zz', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-d>', '<C-d>-zz', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-u>', '<C-u>-zz', { noremap = true, silent = true })
+vim.keymap.set('v', 'cpc', '"+y', { noremap = true, silent = true })
+
 vim.opt.rtp:prepend(lazypath)
 vim.cmd(":set number")
 vim.opt.guifont='CodeNewRoman'
