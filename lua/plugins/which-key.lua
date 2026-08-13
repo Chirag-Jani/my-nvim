@@ -1,6 +1,9 @@
 return {
   {
     "folke/which-key.nvim",
+    -- pinned: lazy otherwise tracks the branch head, which ships a broken
+    -- Config.triggers shape (buf.lua indexes .modes on a list)
+    version = "*",
     event = "VeryLazy",
     opts = {
       spec = {
