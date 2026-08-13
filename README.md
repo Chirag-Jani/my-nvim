@@ -42,7 +42,7 @@ All recenter the cursor after moving.
 | --- | --- |
 | `K` | Hover docs |
 | `<leader>ca` | Code action |
-| `<leader>f` | Format buffer (none-ls: stylua, prettier) |
+| `<leader>fm` | Format buffer (none-ls: stylua, prettier) |
 
 ### Editing
 

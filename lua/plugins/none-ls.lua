@@ -9,6 +9,6 @@ return {
         -- null_ls.builtins.diagnostics.eslint_d,
       },
     })
-    vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, {})
+    vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, { desc = "Format buffer" })
   end,
 }
