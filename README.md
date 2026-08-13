@@ -69,6 +69,15 @@ All recenter the cursor after moving.
 | --- | --- |
 | `<leader>t` | Toggle terminal (ToggleTerm) |
 
+### Discovering keymaps
+
+which-key pops up automatically: start any prefix (`<Space>`, `g`, `z`, `<C-w>`)
+and pause, and it lists what can follow.
+
+| Key | Action |
+| --- | --- |
+| `<leader>?` | Show all keymaps for the current buffer |
+
 ## Ex commands
 
 | Command | Action |
@@ -96,6 +105,7 @@ Alpha shows a startify dashboard on launch when no file argument is given.
 | toggleterm.nvim | Terminal toggle |
 | catppuccin | Active colorscheme (`catppuccin-mocha`) |
 | rose-pine | Installed but inert; alternate colorscheme |
+| which-key.nvim | Keymap discovery popup |
 | vim-be-good | Motion practice |
 
 ## Notes
@@ -105,6 +115,17 @@ Alpha shows a startify dashboard on launch when no file argument is given.
 The active colorscheme is set in `lua/plugins/catppuccin.lua`. rose-pine is
 installed as a `lazy = true` spec, so switching means changing the
 `vim.cmd.colorscheme(...)` call there.
+
+### LSP servers install automatically
+
+`lua/plugins/lsp-config.lua` sets `ensure_installed = { "ts_ls", "html", "lua_ls" }`,
+so Mason installs them on startup if missing. Note the option is
+`automatic_installation` — `auto_install` is not a real setting and is
+silently ignored, which leaves servers uninstalled and produces
+"language server ... is either not installed, missing from PATH" errors.
+
+Mason package names differ from lspconfig server names (`html` → `html-lsp`).
+Use `:Mason` to browse the correct names.
 
 ### nvim-lspconfig is version-pinned
 
