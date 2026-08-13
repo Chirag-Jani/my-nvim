@@ -1,5 +1,10 @@
 return {
-  {'akinsho/toggleterm.nvim', version = "*", opts = {
-    vim.keymap.set('n', '<leader>t', ':ToggleTerm<CR>', {})
-  }},
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    opts = {},
+    keys = {
+      { "<leader>t", "<cmd>ToggleTerm<CR>", desc = "Toggle terminal" },
+    },
+  },
 }

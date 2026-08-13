@@ -17,12 +17,14 @@ return {
 
 	{
 		"neovim/nvim-lspconfig",
+		-- pinned: v2.x requires Nvim 0.11.3+, this machine runs 0.10
+		version = "v1.8.0",
 		lazy = false,
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
-			lspconfig.tsserver.setup({
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.html.setup({
